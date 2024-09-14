@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Membership Form</title>
+  <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+</head>
+<body>
+  <div class="form-container">
+    <form action="/submit" method="post"> 
+      <!-- Name -->
+      <div class="form-group">
+        <label for="name" class="name-h1">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+      <!-- Email -->
+      <div class="form-group">
+        <label for="email" class="name-h1">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+      <!-- Phone Number -->
+      <div class="form-group">
+        <label for="phone" class="name-h1">Phone Number:</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+      <!-- Date of Birth -->
+      <div class="form-group">
+        <label for="dob" class="name-h1">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" required>
+      </div>
+      <!-- Membership Type -->
+      <div class="form-group">
+        <label for="membership"  class="name-h1" >What type of membership do you want:</label>
+        <select id="membership" name="membership" required>
+            <option value="" class="Select-opt">--Select your--</option> <!-- Placeholder option -->
+            <option value="basic" class="Select-opt">Life Time MemberShip</option>
+            <option value="premium" class="Select-opt">One Year MemberShip</option>
+          </select>
+      </div>
+      <!-- Instagram ID -->
+      <div class="form-group">
+        <label for="instagram" class="name-h1">Instagram ID:</label>
+        <input type="text" id="instagram" name="instagram"  required>
+      </div>
+      <div class="form-group">
+        <label for="Self-pic" class="name-h1">Self Picture:</label>
+        <input type="file" id="Self-pic" name="gallery" accept="image/*" multiple>
+        <Radio
+      </div>
+      <!-- About Yourself -->
+      <div class="form-group">
+        <label for="about" class="name-h1">Something About Yourself:</label>
+        <textarea id="about" name="about"  required></textarea>
+      </div>
+      <!-- How did you hear about us -->
+      <div class="form-group">
+        <label for="reference" class="name-h1">How did you come to know about us? (Write the state leader's name or name of the person who introduced you to OPUS):</label>
+        <textarea id="reference" name="reference" placeholder="Your message" required></textarea>
+        <p class="Membership-Heading">Register For Opus MemberShip: ₹600</p>
+        <p class="Membership-Heading-2"> I have read rules and regulations mentioned above. I declare that all the information I have provided is authentic.</p>
+      </div>
+      <!-- Submit -->
+      <div class="form-group">
+        <button type="submit">Pay ₹600</button>
+      </div>
+    </form>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+
+  <script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      preferredCountries: ["in", "us", "gb"], 
+      initialCountry: "in", 
+      utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js",
+    });
+  </script>
+</body>
+</html>
